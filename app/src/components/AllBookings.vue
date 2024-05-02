@@ -22,7 +22,7 @@ export default {
 
     const getAllBookings = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:3000/api/v1/bookings");
+        const response = await axios.get("/api/v1/bookings");
         bookings.value = response.data;
         console.log("All bookings:", bookings.value);
       } catch (error) {

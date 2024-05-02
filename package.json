@@ -9,7 +9,10 @@
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
-    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+    "build:backend": "babel controllers models routes utils app.js server.js --out-dir public",
+
+
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Geeshni Ramchurn",
@@ -40,6 +43,9 @@
     "xss-clean": "^0.1.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.5",
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.29.1",

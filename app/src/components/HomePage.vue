@@ -89,7 +89,7 @@ export default {
 
     const logout = async () => {
       try {
-        await axios.get("http://127.0.0.1:3000/api/v1/users/logout");
+        await axios.get("/api/v1/users/logout");
         props.onLogout(); // Emit the logout event
         console.log("Logged out successfully");
       } catch (error) {

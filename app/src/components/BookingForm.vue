@@ -84,10 +84,7 @@ export default {
 
     const submitForm = async () => {
       try {
-        const response = await axios.post(
-          `http://127.0.0.1:3000/api/v1/bookings`,
-          cardInfo
-        );
+        const response = await axios.post(`/api/v1/bookings`, cardInfo);
         console.log(response.data);
         if (response.status === 201) {
           bookingMessage.value = "Booking Successful! Thanks for your purchase!";

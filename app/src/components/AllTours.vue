@@ -64,7 +64,7 @@ export default {
 
     async function fetchTours() {
       try {
-        const response = await axios.get("http://127.0.0.1:3000/api/v1/tours");
+        const response = await axios.get("/api/v1/tours");
         tours.value = response.data;
         console.log("tours", tours.value);
       } catch (error) {

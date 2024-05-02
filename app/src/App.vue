@@ -124,10 +124,7 @@ export default {
 
     async function login() {
       try {
-        const response = await axios.post(
-          "http://127.0.0.1:3000/api/v1/users/login",
-          loginData.value
-        );
+        const response = await axios.post("/api/v1/users/login", loginData.value);
         if (response.status === 200) {
           loggedIn.value = true;
           localStorage.setItem("token", response.data.token);
@@ -140,7 +137,7 @@ export default {
 
     async function signup() {
       try {
-        await axios.post("http://127.0.0.1:3000/api/v1/users/signup", signupData.value);
+        await axios.post("/api/v1/users/signup", signupData.value);
         await login();
       } catch (error) {
         console.error("Sign up error:", error);

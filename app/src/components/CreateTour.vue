@@ -96,10 +96,7 @@ export default {
     };
     async function createTour(newTourData) {
       try {
-        const response = await axios.post(
-          "http://127.0.0.1:3000/api/v1/tours",
-          newTourData
-        );
+        const response = await axios.post("/api/v1/tours", newTourData);
         return response;
         // console.log("New tour created:", response.data);
       } catch (error) {
