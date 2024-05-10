@@ -2,7 +2,7 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "tours app with mongodb",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon server.js",
