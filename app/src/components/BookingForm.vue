@@ -64,6 +64,8 @@
 </template>
 
 <script>
+import Vue from "vue";
+
 import { ref, reactive } from "vue";
 import axios from "axios";
 

@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import Vue from "vue";
 import axios from "axios";
 import { ref } from "vue";
 import CreateTour from "./CreateTour.vue";

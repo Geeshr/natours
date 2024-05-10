@@ -66,6 +66,7 @@
 </template>
 
 <script>
+import Vue from "vue";
 import axios from "axios";
 import { onMounted, ref, computed } from "vue";
 import FlatPickr from "vue-flatpickr-component";

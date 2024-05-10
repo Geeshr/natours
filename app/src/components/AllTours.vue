@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import Vue from "vue";
+
 import axios from "axios";
 import { onMounted, ref } from "vue";
 import BookingForm from "./BookingForm.vue"; // Import your BookingForm component here

@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import Vue from "vue";
+
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
