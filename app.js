@@ -139,7 +139,8 @@ const bookingController = require('./controllers/bookingController');
 // Start express app
 const app = express();
 
-app.enable('trust proxy');
+// app.enable('trust proxy');
+app.set('trust proxy', 'loopback');
 
 // 1) GLOBAL MIDDLEWARES
 // Implement CORS
@@ -204,10 +205,10 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-app.use('api/v1/tours', tourRouter);
-app.use('api/v1/users', userRouter);
-app.use('api/v1/reviews', reviewRouter);
-app.use('api/v1/bookings', bookingRouter);
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
+app.use('/api/v1/reviews', reviewRouter);
+app.use('/api/v1/bookings', bookingRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

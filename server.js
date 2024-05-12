@@ -12,6 +12,7 @@ const app = require('./app');
 
 // Define a route handler for the root URL
 app.get('/', (req, res) => {
+  console.log('testttttt')
   res.status(200).json({
     status: 'success',
     message: 'Welcome to the API!'
@@ -32,7 +33,7 @@ mongoose
   .then(() => console.log('DB connection successful!'))
   .catch(err => console.error('DB connection error:', err));
 
-const port = process.env.PORT || 10000;
+const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
