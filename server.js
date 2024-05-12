@@ -11,13 +11,13 @@ dotenv.config({ path: './config.env' });
 const app = require('./app');
 
 // Define a route handler for the root URL
-app.get('/', (req, res) => {
-  console.log('testttttt')
-  res.status(200).json({
-    status: 'success',
-    message: 'Welcome to the API!'
-  });
-});
+// app.get('/', (req, res) => {
+//   console.log('testttttt')
+//   res.status(200).json({
+//     status: 'success',
+//     message: 'Welcome to the API!'
+//   });
+// });
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',

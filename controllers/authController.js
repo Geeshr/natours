@@ -47,7 +47,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     password: req.body.password,
     passwordConfirm: req.body.passwordConfirm
   });
-  console.log('test user object', newUser)
+  // console.log('test user object', newUser)
   const url = `${req.protocol}://${req.get('host')}/me`;
   // console.log(url);
   await new Email(newUser, url).sendWelcome();
@@ -68,7 +68,7 @@ exports.login = catchAsync(async (req, res, next) => {
   if (!user || !(await user.correctPassword(password, user.password))) {
     return next(new AppError('Incorrect email or password', 401));
   }
-  console.log('user', user)
+  // console.log('user', user)
 
   // 3) If everything ok, send token to client
   createSendToken(user, 200, req, res);
