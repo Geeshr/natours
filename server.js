@@ -11,13 +11,13 @@ dotenv.config({ path: './config.env' });
 const app = require('./app');
 
 // Define a route handler for the root URL
-// app.get('/', (req, res) => {
-//   console.log('testttttt')
-//   res.status(200).json({
-//     status: 'success',
-//     message: 'Welcome to the API!'
-//   });
-// });
+app.get('/', (req, res) => {
+  console.log('testttttt')
+  res.status(200).json({
+    status: 'success',
+    message: 'Welcome to the API!'
+  });
+});
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
@@ -34,6 +34,7 @@ mongoose
   .catch(err => console.error('DB connection error:', err));
 
 const port = process.env.PORT || 3000;
+console.log('port:', port)
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
