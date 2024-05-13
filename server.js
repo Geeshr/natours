@@ -12,10 +12,15 @@ const app = require('./app');
 
 // Define a route handler for the root URL
 app.get('/', (req, res) => {
-  console.log('testttttt')
   res.status(200).json({
     status: 'success',
-    message: 'Welcome to the API!'
+    message: 'Welcome to the Natours API!',
+    endpoints: {
+      tours: '/api/v1/tours',
+      users: '/api/v1/users',
+      reviews: '/api/v1/reviews',
+      bookings: '/api/v1/bookings'
+    }
   });
 });
 
