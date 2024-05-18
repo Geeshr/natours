@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 
 process.on('uncaughtException', err => {
   console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+  console.log('error ->', err)
   console.log(err.name, err.message);
   process.exit(1);
 });
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
     endpoints: {
       tours: '/api/v1/tours',
       users: '/api/v1/users',
-      reviews: '/api/v1/reviews',
+      // reviews: '/api/v1/reviews',
       bookings: '/api/v1/bookings'
     }
   });
