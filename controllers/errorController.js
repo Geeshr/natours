@@ -12,8 +12,6 @@ const handleDuplicateFieldsDB = err => {
     const message = `Duplicate field value: ${value}. Please use another value!`;
     return new AppError(message, 400);
   } else {
-    // Handle the case when err.errmsg is undefined
-    // You can adjust this part based on your needs
     return new AppError('An error occurred', 500);
   }
 };
@@ -43,6 +41,7 @@ const sendErrorDev = (err, req, res) => {
   console.error('ERROR 💥', err);
   return res.status(err.statusCode).render('error', {
     title: 'Something went wrong!',
+    error: err,
     msg: err.message
   });
 };
