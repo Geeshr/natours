@@ -11,6 +11,7 @@ router.get('/logout', authController.logout);
 
 router
   .route('/')
+  .get(userController.getAllUsers);
   .post(userController.createUser);
 
 module.exports = router;
