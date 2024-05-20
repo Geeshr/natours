@@ -6,10 +6,16 @@ const handleCastErrorDB = err => {
 };
 
 const handleDuplicateFieldsDB = err => {
-  const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
+  if (err.errmsg) {
+    const value = err.errmsg.match(/(["'])(\\?.)*?\1/)[0];
 
-  const message = `Duplicate field value: ${value}. Please use another value!`;
-  return new AppError(message, 400);
+    const message = `Duplicate field value: ${value}. Please use another value!`;
+    return new AppError(message, 400);
+  } else {
+    // Handle the case when err.errmsg is undefined
+    // You can adjust this part based on your needs
+    return new AppError('An error occurred', 500);
+  }
 };
 
 const handleValidationErrorDB = err => {
